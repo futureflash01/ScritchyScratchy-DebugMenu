@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>DebugMenu</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    
+    <!-- EDIT THIS PATH to match your local game installation -->
+    <!-- Example: E:\SteamLibrary\steamapps\common\Scritchy Scratchy -->
+    <!-- ^^ Make sure path has no quotation marks and uses backslashes only! -->
+    <GameDir>GAME_PATH_HERE</GameDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BepInEx -->
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+
+    <!-- Unity IL2CPP -->
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(GameDir)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameDir)\BepInEx\unity-libs\UnityEngine.dll</HintPath>
+    </Reference>
+	<Reference Include="Unity.InputSystem">
+      <HintPath>$(GameDir)\BepInEx\interop\Unity.InputSystem.dll</HintPath>
+    </Reference>
+
+    <!-- Legacy Input Module -->
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
